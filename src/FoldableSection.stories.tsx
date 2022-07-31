@@ -16,6 +16,28 @@ const content = (
   </>
 );
 
+export const AccessibleFordable = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <button aria-expanded={open} id="toggle" aria-controls="foldable" onClick={() => setOpen(!open)} type="button">
+        toggle content
+      </button>
+      <FoldableSection
+        id="foldable"
+        role="region"
+        tabIndex={-1}
+        open={open}
+        aria-labelledby="toggle"
+        transitionDuration={TIMEOUT}
+      >
+        {content}
+      </FoldableSection>
+    </>
+  );
+};
+
 export const StaticFoldable = () => {
   const [open, setOpen] = useState(false);
 

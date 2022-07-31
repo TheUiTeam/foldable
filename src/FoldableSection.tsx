@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, ReactElement, Suspense } from 'react';
+import { AriaRole, FC, PropsWithChildren, ReactElement, Suspense } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 import { Styles, styles } from './styles';
@@ -9,6 +9,10 @@ import { usePrevious } from './utils/use-previous';
 export type FoldableProps = {
   className?: string;
   style?: Partial<CSSStyleDeclaration>;
+  id?: string;
+  role?: AriaRole;
+  tabIndex?: -1;
+  'aria-labelledby'?: string;
   /**
    * overrides default className for animation control
    */
@@ -29,6 +33,8 @@ export type FoldableProps = {
    */
   controlProperty?: 'height' | 'maxHeight' | `--${string}`;
   transitionDuration?: number;
+
+  onStateChange?(state: Phase): void;
 };
 
 export type Phase =
@@ -68,6 +74,8 @@ export const MeasurableSection: FC<
   keepContent,
   children,
   transitionDuration = 300,
+  onStateChange,
+  ...rest
 }) => {
   const [open, setIsOpen] = useState(openProp);
   const [state, setState] = useState<Phase>('idle');
@@ -122,6 +130,12 @@ export const MeasurableSection: FC<
     return () => null;
   }, [state, openProp]);
 
+  useEffect(() => {
+    if (onStateChange) {
+      onStateChange(state);
+    }
+  }, [state]);
+
   const idle = state === 'idle';
   const measuringCallback = () => setState('measuring');
   const display = Boolean(open || !idle || keepContent);
@@ -139,6 +153,7 @@ export const MeasurableSection: FC<
           // @ts-expect-error
           '--foldable-duration': `${transitionDuration}ms`,
         }}
+        {...rest}
       >
         {children({ display, state, prepare, onReady: measuringCallback })}
       </div>

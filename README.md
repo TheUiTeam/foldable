@@ -35,12 +35,18 @@ import {FoldableSection} from "@theuiteam/foldable";
 
 ## API
 
-| Prop               | Type                                | Description                                    |
-| ------------------ | ----------------------------------- | ---------------------------------------------- |
-| open               | boolean                             | Control expanded/collapsed state               |
-| transitionDuration | number                              | Time for animation, default 300ms              |
-| [keepContent]      | boolean                             | Renders content even in hidden state           |
-| [controlProperty]  | height, max-height, custom variable | Controls how height is set, default max-height |
+| Prop               | Type                                | Description                                                                                                     |
+| ------------------ | ----------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| open               | boolean                             | Control expanded/collapsed state                                                                                |
+| transitionDuration | number                              | Time for animation, default 300ms                                                                               |
+| [keepContent]      | boolean                             | Renders content even in hidden state                                                                            |
+| [controlProperty]  | height, max-height, custom variable | Controls how height is set, default max-height                                                                  |
+| [onStateChange]    | (currentState: Phase)=>void         | Allows custom hooks into state transition. You might be interesting to know about `animating` and `idle` states |
+
+## A11y
+
+Accessibility is expected to be configured "from the outside".
+Please follow [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/example-index/accordion/accordion) example or check out storybook example.
 
 ## Configuring animations
 
