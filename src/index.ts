@@ -1,1 +1,3 @@
-export { FoldableSection } from './FoldableSection';
+export { FoldableSection, MeasurableSection } from './FoldableSection';
+
+export type { MeasurableProps, FoldableProps } from './FoldableSection';

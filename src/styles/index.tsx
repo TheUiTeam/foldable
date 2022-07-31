@@ -1,7 +1,3 @@
-import { styleSingleton } from 'react-style-singleton';
-
-const Style = styleSingleton();
-
 export const styles = {
   base: 'foldable_base',
   section: 'foldable_section',
@@ -10,11 +6,12 @@ export const styles = {
 };
 
 export const Styles = () => (
-  <Style
-    styles={`
+  <style
+    dangerouslySetInnerHTML={{
+      __html: `
 .${styles.base} {
 	transition-property: height, max-height;
-	transition-duration: var(--duration);
+	transition-duration: var(--foldable-duration);
 	overflow-anchor: none;
 }
 
@@ -31,6 +28,7 @@ export const Styles = () => (
 	transition-property: none !important;
 	transition-duration: 0ms !important;
 }
-`}
+`,
+    }}
   />
 );
