@@ -1,6 +1,6 @@
 {
   "name": "@theuiteam/foldable",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Foldable section",
   "main": "dist/es5/index.js",
   "module": "dist/es2015/index.js",
