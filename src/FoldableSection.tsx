@@ -146,6 +146,15 @@ export const MeasurableSection: FC<
   );
 };
 
+/**
+ * A collapsible panel
+ * @example
+ * ```tsx
+ * <FoldableSection open={isOpen}>
+ *     content
+ * </FoldableSection>
+ * ```
+ */
 export const FoldableSection: FC<PropsWithChildren<FoldableProps>> = ({ children, ...props }) => (
   <MeasurableSection {...props}>
     {(props) => <SuspendedMeasurement {...props}>{children}</SuspendedMeasurement>}

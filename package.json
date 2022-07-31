@@ -3,23 +3,23 @@
   "version": "1.0.0",
   "description": "Foldable section",
   "main": "dist/es5/index.js",
+  "module": "dist/es2015/index.js",
+  "module:es2019": "dist/es2019/index.js",
+  "types": "dist/es5/index.d.ts",
   "repository": "git@github.com:TheUiTeam/foldable.git",
   "author": "<thearnica@gmail.com>",
   "license": "MIT",
+  "sideEffects": false,
   "devDependencies": {
     "@babel/core": "^7.18.9",
     "@size-limit/preset-small-lib": "^2.1.6",
     "@storybook/builder-webpack4": "^6.5.9",
     "@storybook/manager-webpack4": "^6.5.9",
     "@storybook/react": "^6.5.9",
-    "@theuiteam/lib-builder": "^0.2.0",
+    "@theuiteam/lib-builder": "^0.2.1",
     "babel-loader": "^8.2.5",
-    "eslint-plugin-prettier": "^4.2.1",
     "identity-obj-proxy": "^3.0.0"
   },
-  "module": "dist/es2015/index.js",
-  "module:es2019": "dist/es2019/index.js",
-  "types": "dist/es5/index.d.ts",
   "engines": {
     "node": ">=10"
   },
