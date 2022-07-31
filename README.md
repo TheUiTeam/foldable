@@ -17,6 +17,8 @@ npm add @theuiteam/foldable
 
 # Example
 
+- [simple accordion](https://codesandbox.io/s/theuiteam-foldable-pk6bi6?file=/src/App.tsx), codesandbox
+
 Works for the majority of possible case
 
 ```tsx
