@@ -7,7 +7,7 @@ Fully automated and animated `Collapse` primitive.
 - 📦 Composable API, simple yet powerful
 - 🔋 Batteries included, just ~~add water~~ provide children
 - 🤖 Powered by state machines, all animations are reversible
-- 👩‍👧 Small - 1kb
+- 👩‍👧 Small - 1kb (even before Gzip, if you subtract tslib)
 
 ## Instalation
 
