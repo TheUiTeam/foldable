@@ -146,4 +146,34 @@ export const TransitionControlledFoldable = () => {
   );
 };
 
+export const SeeMoreFoldable = () => {
+  const [open, setOpen] = useState(false);
+  const [state, setState] = useState('');
+
+  const hideScrollFade = state === 'idle' && open;
+
+  return (
+    <>
+      <FoldableSection
+        open={open}
+        transitionDuration={TIMEOUT}
+        keepContent
+        style={{ minHeight: '60px', borderBottom: hideScrollFade ? 'none' : '1px solid red' }}
+        onStateChange={setState}
+      >
+        <p>
+          {state}: a few lines
+          <button onClick={() => setOpen(!open)} type="button">
+            toggle
+          </button>
+        </p>
+        {content}
+        <button onClick={() => setOpen(false)} type="button">
+          See less
+        </button>
+      </FoldableSection>
+    </>
+  );
+};
+
 export default {};
