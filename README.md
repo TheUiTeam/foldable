@@ -1,6 +1,25 @@
-# Foldable
+<div align="center">
+  <h1 align="center">
+ Foldable
+ </h1>
+Fully automated and animated `Collapsible` primitive.
+</div>
 
-Fully automated and animated `Collapse` primitive.
+<p align="center">
+  <a href="https://bundlephobia.com/result?p=@theuiteam/foldable">
+    <img alt="Bundlephobia" src="https://img.shields.io/bundlephobia/minzip/@theuiteam/foldable?style=for-the-badge&labelColor=24292e">
+  </a>
+  <a aria-label="Types" href="https://www.npmjs.com/package/@theuiteam/foldable">
+    <img alt="Types" src="https://img.shields.io/npm/types/@theuiteam/foldable?style=for-the-badge&labelColor=24292e">
+  </a>
+  <a aria-label="License" href="https://jaredlunde.mit-license.org/">
+    <img alt="MIT License" src="https://img.shields.io/npm/l/@theuiteam/foldable?style=for-the-badge&labelColor=24292e">
+  </a>
+</p>
+
+<pre align="center">npm i @theuiteam/foldable</pre>
+<hr>
+
 
 - 🚀 Based on CSS transition, working as fast as possible
 - 👩‍🔬 Automatic height measurement even for such complex cases as code split content
